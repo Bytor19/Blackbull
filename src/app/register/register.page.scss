@@ -1,0 +1,162 @@
+ion-content {
+    --background: linear-gradient(180deg, #000000, #a219d8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 16px;
+    margin: 0;
+  }
+  
+  /* Contenedor principal del formulario */
+  .login-container {
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 58%; /* Ajusta la posición vertical para bajar más */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Estilo del logo */
+  .logo {
+    max-width: 120px;
+    margin-bottom: 0; /* Espacio mínimo entre el logo y el título */
+    margin-top: 5px; /* Ajuste para centrar visualmente */
+    filter: brightness(2.2); /* Aumenta el brillo en un 50% */
+  }
+  
+  /* Estilo del título "POWERBULL" como imagen */
+  .powerbull-title {
+    max-width: 180px;
+    margin-top: -10px; /* Reduce el espacio entre el logo y el título */
+    margin-bottom: 0; /* Sin margen inferior */
+  }
+  
+  /* Estilo del subtítulo */
+  .subtitle {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 15px;
+  }
+  
+  /* Estilo del formulario */
+  .login-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  /* Estilo de los inputs */
+  ion-item {
+    --background: transparent;
+    --border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  ion-input {
+    color: #333;
+    --padding-start: 10px;
+  }
+  
+  /* Estilo del enlace de recuperar contraseña */
+  .forgot-password,
+  .Register {
+    color: #9b59b6;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+  }
+  
+  /* Estilo del botón de inicio de sesión */
+  .login-button {
+    --background: #9b59b6;
+    --border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(155, 89, 182, 0.5);
+  }
+  
+  /* Media queries para pantallas grandes */
+  @media (min-width: 1024px) {
+    .login-container {
+      top: 55%; /* Ajusta la posición vertical para pantallas grandes */
+      transform: translate(-50%, -50%);
+    }
+  
+    .logo {
+      margin-top: 10px; /* Reduce el espacio superior */
+      margin-bottom: 0; /* Mantiene el espacio mínimo entre el logo y el título */
+    }
+  
+    .powerbull-title {
+      margin-top: -10px;
+      margin-bottom: 0;
+    }
+  }
+  
+  /* Media queries para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .login-container {
+      max-width: 90%;
+      height: auto;
+    }
+  
+    .logo {
+      max-width: 150px;
+      margin-bottom: -90px;
+    }
+  
+    .powerbull-title {
+      max-width: 200px;
+      margin-bottom: -60px;
+    }
+  
+    .subtitle {
+      font-size: 1.2rem;
+    }
+  
+    .login-card {
+      padding: 15px;
+    }
+  
+    .forgot-password,
+    .Register {
+      font-size: 0.8rem;
+    }
+  
+    .login-button {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Media queries para pantallas muy pequeñas (teléfonos) */
+  @media (max-width: 480px) {
+    .subtitle {
+      font-size: 1rem;
+    }
+  
+    .login-container {
+      padding: 10px;
+    }
+  
+    .login-button {
+      padding: 8px;
+      font-size: 0.8rem;
+    }
+  }

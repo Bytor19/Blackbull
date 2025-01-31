@@ -1,0 +1,75 @@
+/* Contenedor principal de la página, asegurando que los elementos estén centrados */
+.admin-container {
+    display: flex;
+    flex-direction: column;  /* Asegura que los elementos se apilen verticalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center;     /* Centra los elementos horizontalmente */
+    height: 100%;            /* Ocupa toda la altura disponible */
+    padding: 20px;           /* Espaciado alrededor del contenido */
+    background: linear-gradient(180deg, #000000, #a219d8); /* Fondo gris claro para la página */
+  }
+  
+  /* Estilo del título */
+  .admin-title {
+    font-size: 2.5rem;  /* Tamaño grande para el título */
+    font-weight: bold;  /* Peso de la fuente en negrita */
+    color: #ffffff;        /* Color oscuro para el título */
+    margin-bottom: 30px; /* Espaciado debajo del título */
+    text-align: center;
+  }
+  
+  /* Estilo para las tarjetas (cards) */
+  .admin-card {
+    width: 80%;        /* Establece el tamaño de las tarjetas */
+    max-width: 400px;  /* Limita el ancho máximo */
+    margin: 15px 0;    /* Espaciado entre tarjetas */
+    text-align: center; /* Centra el contenido dentro de la tarjeta */
+    cursor: pointer;   /* Cambia el cursor para indicar que es clickeable */
+    padding: 20px;      /* Espaciado dentro de las tarjetas */
+    border-radius: 12px; /* Bordes redondeados para las tarjetas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animaciones suaves */
+  }
+  
+  /* Estilo para el hover (cuando el ratón pasa sobre la tarjeta) */
+  .admin-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación cuando pasa el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+  }
+  
+  /* Iconos dentro de las tarjetas */
+  .admin-card ion-icon {
+    font-size: 3rem;    /* Tamaño grande para los iconos */
+    color: #007bff;     /* Color azul para los iconos */
+    margin-bottom: 10px; /* Espaciado debajo del icono */
+  }
+  
+  /* Colores personalizados */
+  :root {
+    --ion-color-primary: #007bff;   /* Color principal para botones e iconos */
+    --ion-color-secondary: #6c757d; /* Color secundario */
+    --ion-color-tertiary: #28a745;  /* Color terciario */
+    --ion-color-light: #5889b9;     /* Color claro para fondo */
+    --ion-color-dark: #343a40;      /* Color oscuro para texto */
+    --ion-card-background: #c22c2c; /* Fondo blanco para las tarjetas */
+    --ion-card-shadow: rgba(0, 0, 0, 0.1); /* Sombra suave para las tarjetas */
+    --ion-card-hover-shadow: rgba(0, 0, 0, 0.2); /* Sombra intensa para hover */
+  }
+  
+
+  .back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10; /* Para asegurarse de que se quede encima de otros elementos */
+    background-color: transparent;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .back-button ion-icon {
+    font-size: 30px;
+    color: #ffffff; /* Puedes ajustar el color según tus preferencias */
+  }
+  
+  
