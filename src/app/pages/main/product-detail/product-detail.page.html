@@ -1,0 +1,39 @@
+<app-header [showMenu]="true" title="Detalles del Producto"></app-header>
+
+<ion-content *ngIf="!loading && product" class="ion-padding">
+  
+  <ion-card>
+    <img [src]="product.image || 'assets/icon/default-product.png'" alt="Imagen del producto" />
+    <ion-card-header>
+      <ion-card-title>{{ product.name }}</ion-card-title>
+      <ion-card-subtitle>{{ product.price | currency: 'USD' }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ product.description }}</p>
+      <p><strong>Unidades Vendidas:</strong> {{ product.soldUnits || 0 }}</p>
+      <p><strong>Ganancia Total:</strong> {{ (product.price * (product.soldUnits || 0)) | currency: 'USD' }}</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<!-- Cargando datos -->
+<div *ngIf="loading" class="loading-container">
+  <ion-spinner name="crescent"></ion-spinner>
+  <p>Cargando producto...</p>
+</div>
+
+
+
+
+<!-- Producto no encontrado -->
+<div *ngIf="!loading && !product" class="empty">
+  <ion-icon name="alert-circle-outline"></ion-icon>
+  <h3>Producto no encontrado</h3>
+</div>
+
+
+<ion-button expand="full" color="primary" (click)="addToCart()">
+  <ion-icon name="cart-outline" slot="start"></ion-icon>
+  Añadir al carrito
+</ion-button>

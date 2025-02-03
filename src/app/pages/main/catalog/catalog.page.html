@@ -1,0 +1,39 @@
+<app-header [showMenu]="true" title="Catálogo"></app-header>
+
+<ion-content class="ion-padding">
+  
+  <!-- Cargando productos -->
+  <div *ngIf="loading" class="loading-container">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando productos...</p>
+  </div>
+
+  <!-- Lista de productos en formato grid -->
+  <ion-grid *ngIf="!loading && products.length">
+    <ion-row>
+      <ion-col size="6" size-md="4" size-lg="3" *ngFor="let product of products">
+        <ion-card (click)="viewProduct(product)" class="product-card">
+          <img [src]="product.image || 'assets/icon/default-product.png'" alt="Imagen del producto" />
+          <ion-card-header>
+            <ion-card-title>{{ product.name }}</ion-card-title>
+            <ion-card-subtitle class="price">{{ product.price | currency:'USD' }}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Mensaje si no hay productos -->
+  <div *ngIf="!loading && !products.length" class="empty">
+    <ion-icon name="bag-outline"></ion-icon>
+    <h3>No hay productos disponibles</h3>
+  </div>
+
+  <!-- Botón flotante para refrescar productos -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="getProducts()">
+      <ion-icon name="refresh-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

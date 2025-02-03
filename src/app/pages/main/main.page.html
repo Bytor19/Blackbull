@@ -1,0 +1,41 @@
+<ion-menu contentId="menu-content" menuId="menu-content" side="start">
+  <app-header title="Menú"></app-header>
+
+  <ion-content class="ion-text-center">
+    <ion-avatar>
+      <img *ngIf="user()?.image" [src]="user()?.image" />
+      <ion-icon *ngIf="!user()?.image" class="empty-icon" name="person-circle-outline"></ion-icon>
+    </ion-avatar>
+
+    <h4>{{user()?.name}}</h4>
+
+    <!-- 🔹 Opciones del Menú -->
+    <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
+      <ion-item [ngClass]="{'active': currentPath === p.url}" [routerLink]="p.url" routerDirection="root" detail>
+        <ion-icon slot="start" [name]="p.icon"></ion-icon>
+        <ion-label>{{p.title}} </ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+
+    <!-- 🔹 NUEVO: Opción del Carrito -->
+    <ion-menu-toggle auto-hide="false">
+      <ion-item [routerLink]="'/main/cart'" routerDirection="root" detail>
+        <ion-icon slot="start" name="cart-outline"></ion-icon>
+        <ion-label>Carrito</ion-label>
+        <ion-badge *ngIf="cartCount > 0" color="danger">{{ cartCount }}</ion-badge>
+      </ion-item>
+    </ion-menu-toggle>
+
+  </ion-content>
+
+  <ion-footer class="ion-no-border safe-p-bottom">
+    <ion-menu-toggle auto-hide="false">
+      <ion-item (click)="signOut()" lines="none">
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        <ion-label>Cerrar sesión</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+  </ion-footer>
+</ion-menu>
+
+<ion-router-outlet id="menu-content" main></ion-router-outlet>

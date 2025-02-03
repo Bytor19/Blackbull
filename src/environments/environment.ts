@@ -4,15 +4,15 @@
 
 export const environment = {
   production: false,
-  
-  firebase : {
-    apiKey: "AIzaSyDjaUWCLITm4LBaqkayzBjapHqjiAE8VgA",
-    authDomain: "powerbull-54c69.firebaseapp.com",
-    projectId: "powerbull-54c69",
-    storageBucket: "powerbull-54c69.firebasestorage.app",
-    messagingSenderId: "879937467293",
-    appId: "1:879937467293:web:8399bdb94c9856f6743574",
-  },
+
+  firebaseConfig: {
+    apiKey: "AIzaSyApmwAXofBzz1xhsmNcOaR5T273JhaxQGE",
+    authDomain: "product-admin-app-79b6f.firebaseapp.com",
+    projectId: "product-admin-app-79b6f",
+    storageBucket: "product-admin-app-79b6f.appspot.com",
+    messagingSenderId: "47304256466",
+    appId: "1:47304256466:web:e851d8f40cd4c459a2760b"
+  }
 };
 
 /*

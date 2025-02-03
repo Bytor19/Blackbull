@@ -1,0 +1,36 @@
+<app-header [showMenu]="true" title="Carrito de Compras"></app-header>
+
+<ion-content class="ion-padding">
+  <ion-list *ngIf="cart.length">
+    <ion-item *ngFor="let product of cart">
+      <ion-thumbnail slot="start">
+        <img [src]="product.image || 'assets/icon/default-product.png'" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ product.name }}</h2>
+        <p>Precio: {{ product.price | currency:'USD' }}</p>
+        <ion-item>
+          <ion-label>Cantidad:</ion-label>
+          <ion-input type="number" min="1" [value]="product.soldUnits" (ionChange)="updateQuantity(product, $event)"></ion-input>
+        </ion-item>
+      </ion-label>
+      <ion-button color="danger" (click)="removeItem(product.id)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="!cart.length" class="empty">
+    <ion-icon name="cart-outline"></ion-icon>
+    <h3>Tu carrito está vacío</h3>
+  </div>
+
+  <ion-card *ngIf="cart.length">
+    <ion-card-header>
+      <ion-card-title>Total: {{ total | currency:'USD' }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="full" color="success" (click)="clearCart()">Vaciar Carrito</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
